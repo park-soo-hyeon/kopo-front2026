@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      .container {
+        width: 100%;
+        height: 56px;
+        background-color: rgb(26, 27, 31);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        /* gap: 2px; */
+        /* flex-wrap: wrap; */
+      }
+      .item1 {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 5px;
+      }
+      .item2 {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 5px;
+      }
+      .sub-item {
+        width: 80px;
+        height: 100%;
+        margin: 0;
+        background-color: rgb(27, 32, 28);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        text-align: center;
+        line-height: 18px;
+      }
+      #login {
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item1">
+        <div class="sub-item">Musinsa</div>
+        <div class="sub-item">BEAUTY</div>
+        <div class="sub-item">PLAYER</div>
+        <div class="sub-item">OUTLET</div>
+        <div class="sub-item">BOUTIQUE</div>
+        <div class="sub-item">KICKS</div>
+        <div class="sub-item">KIDS</div>
+        <div class="sub-item">USED</div>
+      </div>
+      <div class="item2">
+        <div class="sub-item">검색</div>
+        <div class="sub-item">좋아요</div>
+        <div class="sub-item">마이</div>
+        <div class="sub-item">장바구니</div>
+        <div class="sub-item" id="login"><span>로그인</span></div>
+      </div>
+    </div>
+  </body>
+</html>

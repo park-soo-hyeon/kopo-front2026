@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function splitPhoneNumber() {
+            let a = document.getElementById("number");
+            if(a.value == ""){
+                alert("번호를 000-0000-0000 형식으로 입력하시오")
+            }
+            let b = a.value.split("-");
+            console.table(b);
+        }
+    </script>
+     
+</head>
+<body>
+    <input type="text" name="cellphone" id="number"/>
+    <input onclick="splitPhoneNumber()" type="button" value="입력"/>
+</body>
+</html>

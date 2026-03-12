@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function getLotto() {
+            let b = [];
+            let num = 0;
+
+            for(let i=0; i<6; i++)
+            {
+                let a = Math.floor(Math.random()*45)+ 1;
+
+                while(b.includes(a)) {
+                    a = Math.floor(Math.random()*45)+ 1;
+                }
+                b.push(a);
+            }
+            
+            document.getElementById("lottoNumber").innerHTML = 
+            b[0] + " " + b[1] + " " + b[2] + " " + b[3] + " " + 
+            b[4] + " " + b[5];
+        }
+    </script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: solid;
+        }
+
+        #head {
+            width: 1000px;
+            height: 90px;
+            background-color: pink;
+            text-align: center;
+            color: gray;
+            border: solid;
+        }
+        #body {
+            width: 1000px;
+            height: 700px;
+            background-color: papayawhip;
+            border: solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #footer {
+            width: 1000px;
+            height: 90px;
+            background-color: pink;
+            border: solid;
+        }
+
+        #lottobtn {
+            width: 70%;
+            height: 10%;
+        }
+        input {
+            background-color: palevioletred;
+            width: 100%;
+            height: 100%;
+        }
+        #lottoVal {
+            border-radius: 50%;
+            border: solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="head"><h1>로또 추출 사이트에 오신걸 환영합니다!</h1></div>
+    <div id="body">
+        <div><h2>당신의 운을 시험해보세요</h2></div>
+        <div id="lottobtn"><input onclick="getLotto()" type="button" value="로또번호" /></div>
+        <div id="lottoVal"><h2 id="lottoNumber"></h2></div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
