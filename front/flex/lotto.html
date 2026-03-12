@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>로또 추출 사이트</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Single+Day&display=swap" rel="stylesheet">
 
     <script>
         function getLotto() {
             let b = [];
-            let num = 0;
+            let a = "";
+            document.getElementById("lottoNumber").innerHTML = "";
 
             for(let i=0; i<6; i++)
             {
@@ -19,10 +24,15 @@
                 }
                 b.push(a);
             }
+
+            for(let j=0; j<6; j++)
+            {
+                a = `<div>${b[j]}</div>`;
+                document.getElementById("lottoNumber").innerHTML += a;
+            }
+
+            //document.getElementById("lottoNumber").innerHTML = b;
             
-            document.getElementById("lottoNumber").innerHTML = 
-            b[0] + " " + b[1] + " " + b[2] + " " + b[3] + " " + 
-            b[4] + " " + b[5];
         }
     </script>
 
@@ -32,56 +42,92 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            border: solid;
         }
 
         #head {
             width: 1000px;
             height: 90px;
-            background-color: pink;
+            background-color: #F7F6D3;
             text-align: center;
-            color: gray;
-            border: solid;
+            color: #25671E;
         }
         #body {
             width: 1000px;
-            height: 700px;
-            background-color: papayawhip;
-            border: solid;
+            height: 500px;
+            background-color: #FFE4EF;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            gap: 15px;
         }
         #footer {
             width: 1000px;
             height: 90px;
-            background-color: pink;
-            border: solid;
+            background-color: #F7F6D3;
         }
 
         #lottobtn {
             width: 70%;
             height: 10%;
         }
+        .btn {
+            color: white;
+            font-size: 30px;
+            border-style: none;
+        }
         input {
-            background-color: palevioletred;
+            background-color: #F39EB6;
             width: 100%;
             height: 100%;
         }
-        #lottoVal {
+        #lottoNumber>div {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             border: solid;
+            text-align: center;
+            color: #25671E;
+            background-color: #F7F6D3;
+        }
+        #lottoNumber {
+            width: 70%;
+            height: 10%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #lottoVal {
+            width: 70%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;;
+        }
+
+        #footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #25671E;
+        }
+        
+        .gaegu-regular {
+            font-family: "Gaegu", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 30px;
         }
     </style>
 </head>
-<body>
-    <div id="head"><h1>로또 추출 사이트에 오신걸 환영합니다!</h1></div>
+<body class="gaegu-regular">
+    <div id="head"><h2>로또 추출 사이트에 오신걸 환영합니다!</h2></div>
     <div id="body">
         <div><h2>당신의 운을 시험해보세요</h2></div>
-        <div id="lottobtn"><input onclick="getLotto()" type="button" value="로또번호" /></div>
+        <div id="lottobtn"><input onclick="getLotto()" type="button" value="로또번호 뽑기" class="btn gaegu-regular"/></div>
         <div id="lottoVal"><h2 id="lottoNumber"></h2></div>
     </div>
-    <div id="footer"></div>
+    <div id="footer"><h3>🍀오늘도 좋은 하루 보내세요🍀</h3></div>
 </body>
 </html>
