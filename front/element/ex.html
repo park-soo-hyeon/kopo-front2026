@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    <div id="div-id"> DIV 요소(id) </div>
+    <div class="div-class"> DIV 요소(class)</div>
+    <button onclick="removeDivId();"> 클릭 </button>
+    
+    <script>
+        const elemList = document.getElementsByTagName('div');
+        console.log(elemList);
+        function removeDivId() {
+            const elem = document.getElementById('div-id');
+            elem.remove(elem);
+            console.log('remove Div-id');
+            console.log(elemList);
+        }
+    </script>
+
+    <div id="div-id"> DIV 요소 </div>
+    <button onclick="removeDiv();" id="button-id">클릭 </button>
+    <script>
+        function removeDiv() {
+            const divElem = document.getElementById('div-id');
+            divElem.parentNode.removeChild(divElem);
+        }
+    </script>
+
+    <div id="div-id"> DIV 요소 </div>
+    <button onclick="addDiv();" id="button-id">클릭 </button>
+    <script>
+        function addDiv() {
+            const divElem = document.getElementById('div-id');
+            divElem.insertAdjacentHTML('beforebegin', '<span> Hello </span>');
+        }
+    </script>
+
+    <div id="div-id"> DIV 요소 (id) </div>
+    <p class="p-class">p 요소 (class)</p>
+
+    <script>
+        const elem1 = console.log(document.querySelector('#div-id')); // DIV 요소 (id)
+        const elem2 = console.log(document.querySelector('.p-class')); // p 요소 (class)
+        const elem3 = console.log(document.querySelector('.p-class, #div-id')); // DIV 요소 (id)
+    </script>
+
+    <ul id="list">
+        <li id="1">list 1</li>
+        <li id="2">list 2</li>
+        <li id="3">list 3</li>
+    </ul>
+    
+    <script>
+        const list = document.getElementById('list');
+        list.addEventListener('click', function(event) {
+            console.log(event.target.id);
+            console.log(event.currentTarget.id);
+        });
+    </script>
+
+    <button onclick="addDiv(event)" id="button-id">클릭</button>
+    <script>
+        document.getElementById('button-id').onclick = (event) => {
+            alert("hello");
+        }
+    </script>
+    -->
+
+    <div id="div-id">div영역
+        <p id="p-id">p영역
+            <a id="a-id" href="http://www.kopo.ac.kr">폴리텍 이동</a></p>
+    </div>
+
+    <script>
+        const div = document.getElementById('div-id');
+        const p = document.getElementById('p-id');
+        const a = document.getElementById('a-id');
+
+        div.addEventListener('click', () => {
+            console.log('div 클릭');
+        }, true)
+        div.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            console.log('p 클릭');
+        }, true)
+        div.addEventListener('click', (ev) => {
+            console.log('a 클릭');
+            ev.preventDefault();
+        }, true)
+    </script>
+</body>
+</html>
